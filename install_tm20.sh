@@ -19,5 +19,5 @@ exit
 EOF
 
 # 4. Finalize and Reboot
-echo "Build complete. Rebooting now..."
-sudo reboot
+echo "Build complete. Shutdown..."
+sudo shutdown now

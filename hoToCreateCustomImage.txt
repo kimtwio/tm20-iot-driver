@@ -1,0 +1,27 @@
+Download latest image from:
+https://nightly.odoo.com/master/iotbox/
+
+Install driver:
+- iot web interface öffnen
+- passwort generieren:
+pw -> remote debug -> generate
+- auf pc:
+- tm20.zip entpacken
+- tm20 folder & script nach /home/pi/ kopieren:
+scp -r tm20 pi@<IP>:/home/pi/
+scp install_tm20.sh pi@<IP>:/home/pi/
+- mit iot box verbinden:
+ssh pi@<IP>
+cd /home/pi
+chmod +x install_tm20.sh
+./install_tm20.sh
+
+IOT will shutdow. (!ONLY CREATE IMAGES FROM PROPERLY SHUTDOWN IOT BOX!)
+
+Create new image with Win32DiskImager
+
+Shrink image with pyshrink:
+wget https://raw.githubusercontent.com/Drewsif/PiShrink/master/pishrink.sh
+chmod +x pishrink.sh
+sudo mv pishrink.sh /usr/local/bin
+sudo pishrink.sh iot_tm20.img
